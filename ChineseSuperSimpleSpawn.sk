@@ -1,0 +1,26 @@
+# 嘿，谢谢你下载这个插件！ 捐款将不胜感激，但不是必须的！ https://paypal.me/CraftYun83
+
+#------------------------------------------------------------------|
+#								   |
+command /spawn:		#					   |
+    aliases: hub, lobby #					   |
+    trigger:		#					   |
+        teleport player to {spawn} #		  		   |
+        send "&6Spawn - 传送你到大厅!" to player #	 	   |
+#                ^						   |
+#                |						   |
+#	这是前缀，将其更改为您想要的任何内容	 		   |
+#								   |
+#------------------------------------------------------------------|
+#								   |
+command /setspawn:		#				   |
+    permission: spawn.set	#				   |
+    aliases: sethub, setlobby #					   |
+    trigger:			#				   |
+        set {spawn} to location of player #			   |
+        send "&6Spawn - 将大厅设置在您的位置!" to player  #	   |
+#                ^						   |
+#                |						   |
+#     这也是一个前缀，也可以更改为您想要的任何形式		   |
+#								   |
+#------------------------------------------------------------------|

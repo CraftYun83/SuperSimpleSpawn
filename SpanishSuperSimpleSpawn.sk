@@ -1,0 +1,26 @@
+# ¡Oye, gracias por descargar este complemento! ¡Se agradecería una donación, pero no es obligatoria! https://paypal.me/CraftYun83
+
+#------------------------------------------------------------------|
+#								   |
+command /spawn:		#					   |
+    aliases: hub, lobby #					   |
+    trigger:		#					   |
+        teleport player to {spawn} #		  		   |
+        send "&6Spawn - ¡Te teletransporta para engendrar!!" to player #	 	   |
+#                ^						   |
+#                |						   |
+#	este es el prefijo, cámbielo a lo que quiera	 	   |
+#								   |
+#------------------------------------------------------------------|
+#								   |
+command /setspawn:		#				   |
+    permission: spawn.set	#				   |
+    aliases: sethub, setlobby #					   |
+    trigger:			#				   |
+        set {spawn} to location of player #			   |
+        send "&6Spawn - ¡Coloca el spawn en tu ubicación!" to player  #|
+#                ^						   |
+#                |						   |
+#     esto también es un prefijo, también cámbielo a lo que quiera |
+#								   |
+#------------------------------------------------------------------|

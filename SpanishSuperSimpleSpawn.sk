@@ -1,4 +1,4 @@
-# ¡Oye, gracias por descargar este complemento! ¡Se agradecería una donación pero no es obligatoria! https://paypal.me/CraftYun83 .
+# ¡Oye, gracias por descargar este complemento! ¡Se agradecería una donación pero no es obligatoria! https://paypal.me/CraftYun83
 
 command /spawn:
     aliases: hub, lobby
@@ -31,3 +31,6 @@ command /spawnprefix [<text>]:
 command /spawnprefixreset
     permission: spawn.prefixreset
     aliases: lobbyprefixreset, hubprefixreset
+    trigger:
+	    remove {prefix::*} from {prefix::*}
+	    send "&6El prefijo del mensaje de lobby se ha restablecido" to player

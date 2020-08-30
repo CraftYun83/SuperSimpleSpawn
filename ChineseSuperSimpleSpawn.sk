@@ -1,7 +1,5 @@
 # 嘿，谢谢你下载这个插件！ 捐款将不胜感激，但不是必须的！ https://paypal.me/CraftYun83
 
-# 嘿，谢谢你下载这个插件！ 捐款将不胜感激，但不是必须的！ https://paypal.me/CraftYun83
-
 command /spawn:
     aliases: hub, lobby
     trigger:

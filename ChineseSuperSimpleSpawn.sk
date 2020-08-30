@@ -1,5 +1,7 @@
 # 嘿，谢谢你下载这个插件！ 捐款将不胜感激，但不是必须的！ https://paypal.me/CraftYun83
 
+# 嘿，谢谢你下载这个插件！ 捐款将不胜感激，但不是必须的！ https://paypal.me/CraftYun83
+
 command /spawn:
     aliases: hub, lobby
     trigger:
@@ -28,6 +30,9 @@ command /spawnprefix [<text>]:
         set {prefix::*} to arg-1 
         send "&6大厅消息前缀已更改为 %arg-1%" to player
 
-command /spawnprefixreset
+command /spawnprefixreset:
     permission: spawn.prefixreset
     aliases: lobbyprefixreset, hubprefixreset
+    trigger:
+        remove {prefix::*} from {prefix::*}
+        send "&6大厅消息前缀已重置" to player

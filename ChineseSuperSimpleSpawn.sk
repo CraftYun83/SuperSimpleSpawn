@@ -1,0 +1,36 @@
+# 嘿，谢谢你下载这个插件！ 捐款将不胜感激，但不是必须的！ https://paypal.me/CraftYun83
+
+command /spawn:
+    aliases: hub, lobby
+    trigger:
+        if {prefix::*} is not set:
+            teleport player to {spawn}
+            send "&6Spawn - &6传送你到大厅去！" to player
+        else:
+            teleport player to {spawn}
+            send "&6%{prefix::*}% - &6传送你到大厅去！" to player
+
+command /setspawn:
+    permission: spawn.set
+    aliases: sethub, setlobby
+    trigger:
+        if {prefix::*} is not set:
+            set {spawn} to location of player
+            send "&6Spawn - &6将大厅设置在您的位置！" to player
+        else:
+            set {spawn} to location of player
+            send "&6%{prefix::*}% - &6将大厅设置在您的位置！" to player
+
+command /spawnprefix [<text>]:
+    permission: spawn.prefix
+    aliases: hubprefix, lobbyprefix
+    trigger:
+        set {prefix::*} to arg-1 
+        send "&6大厅消息前缀已更改为 %arg-1%" to player
+
+command /spawnprefixreset:
+    permission: spawn.prefixreset
+    aliases: lobbyprefixreset, hubprefixreset
+    trigger:
+        remove {prefix::*} from {prefix::*}
+        send "&6大厅消息前缀已重置" to player

@@ -1,26 +1,33 @@
-# ¡Oye, gracias por descargar este complemento! ¡Se agradecería una donación, pero no es obligatoria! https://paypal.me/CraftYun83
+# ¡Oye, gracias por descargar este complemento! ¡Se agradecería una donación pero no es obligatoria! https://paypal.me/CraftYun83
 
-#------------------------------------------------------------------|
-#								   |
-command /spawn:		#					   |
-    aliases: hub, lobby #					   |
-    trigger:		#					   |
-        teleport player to {spawn} #		  		   |
-        send "&6Spawn - ¡Te teletransporta para engendrar!!" to player #	 	   |
-#                ^						   |
-#                |						   |
-#	este es el prefijo, cámbielo a lo que quiera	 	   |
-#								   |
-#------------------------------------------------------------------|
-#								   |
-command /setspawn:		#				   |
-    permission: spawn.set	#				   |
-    aliases: sethub, setlobby #					   |
-    trigger:			#				   |
-        set {spawn} to location of player #			   |
-        send "&6Spawn - ¡Coloca el spawn en tu ubicación!" to player  #|
-#                ^						   |
-#                |						   |
-#     esto también es un prefijo, también cámbielo a lo que quiera |
-#								   |
-#------------------------------------------------------------------|
+command /spawn:
+    aliases: hub, lobby
+    trigger:
+        if {prefix::*} is not set:
+            teleport player to {spawn}
+            send "&6Spawn - &6¡Te teletransporta al lobby!" to player
+        else:
+            teleport player to {spawn}
+            send "&6%{prefix::*}% - &6¡Te teletransporta al lobby!" to player
+
+command /setspawn:
+    permission: spawn.set
+    aliases: sethub, setlobby
+    trigger:
+        if {prefix::*} is not set:
+            set {spawn} to location of player
+            send "&6Spawn - &6¡Configure el lobby en su ubicación!" to player
+        else:
+            set {spawn} to location of player
+            send "&6%{prefix::*}% - &6¡Configure el lobby en su ubicación!" to player
+
+command /spawnprefix [<text>]:
+    permission: spawn.prefix
+    aliases: hubprefix, lobbyprefix
+    trigger:
+        set {prefix::*} to arg-1 
+        send "&6El prefijo del mensaje de lobby se ha cambiado a %arg-1%" to player
+
+command /spawnprefixreset
+    permission: spawn.prefixreset
+    aliases: lobbyprefixreset, hubprefixreset

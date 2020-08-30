@@ -28,7 +28,7 @@ command /spawnprefix [<text>]:
         set {prefix::*} to arg-1 
         send "&6El prefijo del mensaje de lobby se ha cambiado a %arg-1%" to player
 
-command /spawnprefixreset
+command /spawnprefixreset:
     permission: spawn.prefixreset
     aliases: lobbyprefixreset, hubprefixreset
     trigger:
